@@ -60,8 +60,8 @@ resource "aws_db_instance" "example_db" {
   username             = "admin"
   password             = "password"  # Replace with your own password
   vpc_security_group_ids = [aws_security_group.rds_db_security_group.id]
+  enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
 
-  # Use the KMS key for encryption
   kms_key_id           = aws_kms_key.database_key.arn
   storage_encrypted   = true
   skip_final_snapshot = true
