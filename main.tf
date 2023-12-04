@@ -27,7 +27,7 @@ resource "aws_instance" "example_instance" {
   security_groups = [aws_security_group.ec2_instance_sg.name]
 
   metadata_options {
-    http_endpoint               = "disabled"
+    http_endpoint = "disabled"
   }
 
   tags = {
