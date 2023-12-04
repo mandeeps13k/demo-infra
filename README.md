@@ -14,4 +14,8 @@ The Given Terraform Project implements/Creates the following Infrastructure in a
 - The RDS Database instance `demo` has logging enabled with Logs exported to cloudwatch Logs group 
 - The RDS Database instance `demo` uses the previously created kms Key for encrpytion of RDS storage. RDS uses the industry standard AES-256 encryption algorithm to encrypt.
 - Logging is configured for this RDS Databse Instance options set for `enabled_cloudwatch_logs_exports`. The Logs are available in corresponsing Cloudwatch Log Groups.
-- 
+- The given repository also implements Logging related to s3 Buckets using CloudWatch event rules and sending the notifcations to an SNS Topic
+  - The Logging has been configured for THREE Different events namely `PutBucketPublicAccessBlock` , `PutBucketLogging` AND `PutBucketPolicy`
+  - Please Note that these events are configured to detect if `BlockPublicAccess` has been disabled for any s3 Bucket and will send the event notifcation to the SNS Topic.
+  - Similarly, if Bucket Logging is being disabled, then also the event notification will be sent to SNS Topic.
+  - Also, if a Policy is being changed and access is being modified for any s3 Bucket, the event notification will be sent to the SNS Topic.
