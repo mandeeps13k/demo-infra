@@ -1,7 +1,7 @@
 
 resource "aws_key_pair" "example_keypair" {
   key_name   = "example-keypair"  
-  public_key = ""
+  public_key = ${{ secrets.PUBLIC_KEY }}
 }
 
 
