@@ -61,7 +61,7 @@ resource "aws_db_instance" "example_db" {
   instance_class       = "db.t3.micro"
   db_name              = "demo"
   username             = "admin"
-  password             = "password"  
+  password             = ${{ secrets.DB_PASSWORD }}  
   vpc_security_group_ids = [aws_security_group.rds_db_security_group.id]
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
 
