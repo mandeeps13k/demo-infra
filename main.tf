@@ -34,6 +34,7 @@ resource "aws_instance" "example_instance" {
 resource "aws_kms_key" "database_key" {
   description             = "KMS key for RDS encryption"
   deletion_window_in_days = 30  
+  enable_key_rotation = true
 }
 
 resource "aws_security_group" "rds_db_security_group" {
