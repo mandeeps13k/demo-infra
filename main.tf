@@ -47,8 +47,6 @@ resource "aws_security_group" "rds_db_security_group" {
     protocol    = "tcp"
     security_groups = [aws_security_group.ec2_instance_sg.id]
   }
-
-  # ... Other inbound rules if needed
 }
 
 resource "aws_db_instance" "example_db" {
