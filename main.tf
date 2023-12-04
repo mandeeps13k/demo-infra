@@ -64,7 +64,6 @@ resource "aws_db_instance" "example_db" {
   password             = ${{ secrets.DB_PASSWORD }}  
   vpc_security_group_ids = [aws_security_group.rds_db_security_group.id]
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
-
   kms_key_id           = aws_kms_key.database_key.arn
   storage_encrypted   = true
   skip_final_snapshot = true
