@@ -26,6 +26,10 @@ resource "aws_instance" "example_instance" {
   key_name        = aws_key_pair.example_keypair.key_name
   security_groups = [aws_security_group.ec2_instance_sg.name]
 
+  metadata_options {
+    http_endpoint               = "disabled"
+  }
+
   tags = {
     Name = "Example-Instance"
   }
