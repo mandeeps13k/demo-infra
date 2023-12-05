@@ -20,3 +20,6 @@ The Given Terraform Project implements/Creates the following Infrastructure in a
   - Similarly, if Bucket Logging is being disabled, then also the event notification will be sent to SNS Topic.
   - Also, if a Policy is being changed and access is being modified for any s3 Bucket, the event notification will be sent to the SNS Topic.
 - The repository also implements Semgrep workflow which is triggered on any pull request. The semgrep is configured to scan for terraform specific rules to detect any vulnerabilities.
+
+![image](/architecture.png)
+
